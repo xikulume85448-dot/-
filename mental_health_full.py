@@ -35,7 +35,7 @@ GAD_DATA = { "核心维度": ["1. 感到紧张、焦虑或急躁", "2. 不能停
 
 def call_expert_ai(report_data, user_text):
     # 你的 API Key 保持不变
-    client = OpenAI(api_key="sk-287bff28f6d249619192a72a39863809", base_url="https://api.deepseek.com")
+    client = OpenAI(api_key=st.secrets["api_key"], base_url="https://api.deepseek.com")
     
     # [此处全文保留你提供的专业提示词]
     system_instruction = """你是一位资深临床心理学家，擅长心理测量评估、人格分析和心理问题推断。你的任务是基于用户提供的标准化心理问卷数据及自我描述文本，生成一份 “用户心理侧写提示词”。该提示词将作为后续个性化服务（如心理咨询、AI对话等）的核心输入，因此必须专业、细致、客观、具有可操作性。
